@@ -1,0 +1,7 @@
+name: Terraform test
+
+on:
+  workflow_dispatch:
+    
+job:
+  name: run some terraform

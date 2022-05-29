@@ -8,9 +8,8 @@ jobs:
     steps:
       - name: 'Az version'
         run: az version
-      - name: 'Az CLI Login'
+      - name: 'Az login'
         uses: azure/login@v1
-        with: 
-          inlineScript: |
-            az login --identity
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
