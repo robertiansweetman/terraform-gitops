@@ -3,8 +3,9 @@ connect everything up to produce a gitops based deployment pipeline
 
 == Goal
 Produce a working project that shows how to address common issues with DevOps: 
-    
-   "How are we going to glue all this together?"
+
+[.text-center]
+_"How are we going to glue all this together?"_
 
 == Pre-requisites
 
