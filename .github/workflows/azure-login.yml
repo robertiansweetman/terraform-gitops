@@ -8,6 +8,9 @@ jobs:
     steps:
       - name: 'Az version'
         run: az version
-      # - name: 'Az CLI Login'
-      #   uses: azure/login@v1
+      - name: 'Az CLI Login'
+        uses: azure/login@v1
+        with: 
+          inlineScript: |
+            az login --identity
 
