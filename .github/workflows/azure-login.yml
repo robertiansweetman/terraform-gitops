@@ -6,6 +6,8 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Az CLI Login'
-        uses: azure/login@v1
+      - name: 'Az version'
+        run: az version
+      # - name: 'Az CLI Login'
+      #   uses: azure/login@v1
 
