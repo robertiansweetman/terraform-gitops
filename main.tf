@@ -15,8 +15,9 @@ provider "azurerm" {
 
   use_msi = true
 
+  backend "azurerm" {}
   # FIXME: currently this doesn't work -- need to supply variables to backend? Github env -> Tf vars -> this below?
-#   backend "azurerm" {
+  backend "azurerm" {}
 #     storage_account_name = "abcd1234"
 #     container_name       = "tfstate"
 #     key                  = "prod.terraform.tfstate"
