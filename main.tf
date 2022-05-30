@@ -13,13 +13,14 @@ terraform {
 provider "azurerm" {
   features {}
 
-#   use_msi = true
+  use_msi = true
 
+  # FIXME: currently this doesn't work -- need to supply variables to backend? Github env -> Tf vars -> this below?
 #   backend "azurerm" {
 #     storage_account_name = "abcd1234"
 #     container_name       = "tfstate"
 #     key                  = "prod.terraform.tfstate"
 #     subscription_id      = ${{ secrets.ARM_SUBSCRIPTION_ID }}
-#     tenant_id            = "00000000-0000-0000-0000-000000000000"
-  #}
+#     tenant_id            =  "00000000-0000-0000-0000-000000000000"
+#   }
 }
