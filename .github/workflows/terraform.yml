@@ -36,4 +36,7 @@ jobs:
         id: plan
         run: terraform plan
 
-      # see here https://www.terraform.io/language/settings/backends/azurerm
+
+      - name: Terraform apply
+        id: apply
+        run: terraform apply -auto-apply

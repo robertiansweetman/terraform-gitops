@@ -16,3 +16,6 @@ provider "azurerm" {
   # TODO: Go look at the provider code to see how the environment variables are used/interact with this backend block here
   backend "azurerm" {}
 }
+
+
+      # see here https://www.terraform.io/language/settings/backends/azurerm
