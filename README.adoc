@@ -66,5 +66,7 @@ FIXME:  https://github.com/marketplace/actions/azure-cli-action
 
 1. Document manually creating a service principal
     - what is this actually used for?
+    - 
 2. Document manually creating a User Managed Service Identity
     - Why is this important? Why is this done manually?
+    - Must add the 'contributor role' to the scope 'Subscription' for this to be able to run plan
