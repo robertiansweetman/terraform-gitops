@@ -5,8 +5,8 @@ data "azurerm_resource_group" "existing" {
 
 resource "azurerm_storage_account" "bob" {
   name                     = "bob"
-  resource_group_name      = azurerm_resource_group.existing.name
-  location                 = azurerm_resource_group.existing.location
+  resource_group_name      = data.azurerm_resource_group.existing.name
+  location                 = data.azurerm_resource_group.existing.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
