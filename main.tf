@@ -15,13 +15,7 @@ provider "azurerm" {
 
   use_msi = true
 
-  backend "azurerm" {}
-  # FIXME: currently this doesn't work -- need to supply variables to backend? Github env -> Tf vars -> this below?
-  backend "azurerm" {}
-#     storage_account_name = "abcd1234"
-#     container_name       = "tfstate"
-#     key                  = "prod.terraform.tfstate"
-#     subscription_id      = ${{ secrets.ARM_SUBSCRIPTION_ID }}
-#     tenant_id            =  "00000000-0000-0000-0000-000000000000"
-#   }
+  # TODO: Go look at the provider code to see how the environment variables are used/interact with this backend block here
+  backend "local" {}
+
 }

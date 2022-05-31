@@ -31,6 +31,6 @@ jobs:
           CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
         run: terraform init -backend-config="storage_account_name=$STORAGE_ACCOUNT" -backend-config="container_name=$CONTAINER_NAME" -backend-config="resource_group_name=$RESOURCE_GROUP"
       
-      # - name: Terraform plan
-      #   id: plan
-      #   run: terraform plan
+      - name: Terrform Plan
+        id: plan
+        run: terraform plan
