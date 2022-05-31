@@ -1,6 +1,6 @@
 data "azurerm_resource_group" "existing" {
   name      = "Identity"
-  location  = "uksouth"
+  location  = "UK South"
 }
 
 resource "azurerm_storage_account" "bob" {
