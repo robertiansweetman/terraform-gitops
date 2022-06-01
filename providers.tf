@@ -7,7 +7,9 @@ terraform {
       version = "=3.8.0"
     }
   }
-  backend "azurerm" {}
+  backend "azurerm" {
+    use_azuread_auth=true
+  }
 }
 
 provider "azurerm" {
