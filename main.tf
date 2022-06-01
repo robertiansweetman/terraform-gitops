@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "existing" {
-  name      = "Identity"
+  name      = "rg-customer"
 }
 
 resource "azurerm_storage_account" "bob" {
