@@ -8,4 +8,9 @@ terraform {
     }
   }
 }
+
+provider "azurerm" {
+  features {}
+}
+
 # see here https://www.terraform.io/language/settings/backends/azurerm
