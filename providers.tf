@@ -13,6 +13,8 @@ provider "azurerm" {
   features {}
 
   use_msi = true
+
+  backend {}
 }
 
 # see here https://www.terraform.io/language/settings/backends/azurerm
