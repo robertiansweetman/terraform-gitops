@@ -14,7 +14,7 @@ provider "azurerm" {
 
   use_msi = true
 
-  backend {}
+  backend "azurerm" {}
 }
 
 # see here https://www.terraform.io/language/settings/backends/azurerm
