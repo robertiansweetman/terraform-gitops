@@ -22,20 +22,20 @@ jobs:
       - name: Terraform Init
         id: init
         env:
-          ARM_USE_MSI: ${{ secrets.ARM_USE_MSI }}
-          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-          RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
-          STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
-          CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
-        run: terraform init -backend-config="resource_group_name=$RESOURCE_GROUP" -backend-config="storage_account_name=$STORAGE_ACCOUNT" -backend-config="container_name=$CONTAINER_NAME" -backend-config="use_msi=$ARM_USE_MSI" -backend-config="subscription_id=ARM_SUBSCRIPTION_ID"  -backend-config="tenant_id=$ARM_TENANT_ID"  
+          ARM_USE_MSI: ${{ secrets.ARM_USE_MSI }} # tells terraform to use managed identity = true
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }} # must be the client id of the identity to use a user assigned identity
+          # ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }} # needed for auth 
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }} # needed for auth
+          RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }} # needed for msi backend init
+          STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }} # needed for msi backend init
+          CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }} # needed for msi backend init
+          SA_KEY: ${{ secrets.SA_KEY }} # storage_account_key
+        run: terraform init -backend-config="resource_group_name=$RESOURCE_GROUP" -backend-config="storage_account_name=$STORAGE_ACCOUNT" -backend-config="container_name=$CONTAINER_NAME"  -backend-config="key=prod.terraform.tfstate" -backend-config="use_msi=$ARM_USE_MSI" -backend-config="subscription_id=ARM_SUBSCRIPTION_ID"  -backend-config="tenant_id=$ARM_TENANT_ID"  
       
       - name: Terrform Plan
         id: plan
         run: terraform plan
-
 
       - name: Terraform apply
         id: apply

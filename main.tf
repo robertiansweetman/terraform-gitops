@@ -3,7 +3,7 @@ data "azurerm_resource_group" "existing" {
 }
 
 resource "azurerm_storage_account" "bob" {
-  name                     = "bob"
+  name                     = "bob54387439749589348594387598"
   resource_group_name      = "${data.azurerm_resource_group.existing.name}"
   location                 = "${data.azurerm_resource_group.existing.location}"
   account_tier             = "Standard"
