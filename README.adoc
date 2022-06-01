@@ -65,6 +65,7 @@ FIXME:  https://github.com/marketplace/actions/azure-cli-action
 == Documentation
 
 
+NOTE: these resources should NOT be created manually but by a pre-existing service principal that is able to create managed identities using az cli commands.
 1. Manually creating a User Managed Service Identity
     - Needs to be under a subscription and a resource group
         - subscription creation
@@ -83,6 +84,5 @@ FIXME:  https://github.com/marketplace/actions/azure-cli-action
         - RESOURCE_GROUP = resource_group_name
         - STORAGE_ACCOUNT = storage_account_name
         - CONTAINER_NAME = container_name
-        - SA_KEY = key (to access container!)
     - these plus ARM_USE_MSI, ARM_SUBSCRIPTION_ID and ARM_TENANT_ID govern access to the storage account for storing the backend
     
