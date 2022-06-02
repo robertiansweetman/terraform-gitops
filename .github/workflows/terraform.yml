@@ -39,8 +39,8 @@ jobs:
         env: 
           RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          ARM_USE_MSI: ${{ secrets.ARM_USE_MSI }}
         run: terraform plan
-        continue-on-error: true
 
       - name: Terraform apply
         id: apply
