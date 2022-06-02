@@ -17,7 +17,7 @@ provider "azurerm" {
   features {}
 
   use_msi = "true"
-  use_microsoft_graph = "true"
+  # use_microsoft_graph = "true"
 }
 
 # see here https://www.terraform.io/language/settings/backends/azurerm
