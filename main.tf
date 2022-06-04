@@ -9,8 +9,8 @@ resource "azurerm_storage_account" "bob" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
-  identity = {
-      type = "UserAssigned"
+  identity {
+    type = "UserAssigned"
   }
 
   tags = {
