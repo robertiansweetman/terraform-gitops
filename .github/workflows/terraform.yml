@@ -36,6 +36,8 @@ jobs:
       
       - name: Terrform Plan
         id: plan
+        env:
+            TF_LOG: "DEBUG"
         # env: 
         #  RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
         #  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
