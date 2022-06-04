@@ -8,15 +8,14 @@ terraform {
     }
   }
   backend "azurerm" {
+    use_microsoft_graph = true
   }
 }
 
 provider "azurerm" {
   # skip_provider_registration = "true"
   features {}
-
   use_msi = true
-  use_microsoft_graph = true
 }
 
 # see here https://www.terraform.io/language/settings/backends/azurerm
