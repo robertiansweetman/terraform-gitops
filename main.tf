@@ -2,6 +2,11 @@ data "azurerm_resource_group" "existing" {
   name      = "rg-customer"
 }
 
+data "azurerm_user_assigned_identity" "existing" {
+    name = "umagithub"
+    resource_group_name = data.azurerm_resource_group.existing.name
+}
+
 resource "azurerm_storage_account" "bob" {
   name                     = "bob54387439749589348"
   resource_group_name      = "${data.azurerm_resource_group.existing.name}"
@@ -11,6 +16,7 @@ resource "azurerm_storage_account" "bob" {
 
   identity {
     type = "UserAssigned"
+    identity_ids = [data.azurerm_user_assigned_identity.existing.principal_id]
   }
 
   tags = {
