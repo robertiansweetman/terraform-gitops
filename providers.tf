@@ -13,9 +13,15 @@ terraform {
 }
 
 provider "azurerm" {
-  skip_provider_registration = "true"
+  # skip_provider_registration = "true"
   features {}
-  use_msi = true
+
 }
 
 # see here https://www.terraform.io/language/settings/backends/azurerm
+
+data azurerm_client_config current {}
+
+output current_client_config {
+    value = data.azurerm_client_config.current
+}
