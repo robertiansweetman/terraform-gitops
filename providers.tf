@@ -15,7 +15,7 @@ terraform {
 provider "azurerm" {
   # skip_provider_registration = "true"
   features {}
-
+  use_msi = "true"
 }
 
 # see here https://www.terraform.io/language/settings/backends/azurerm
