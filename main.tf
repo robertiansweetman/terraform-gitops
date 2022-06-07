@@ -17,6 +17,8 @@ data "azurerm_user_assigned_identity" "existing" {
 #   identity {
 #     type = "UserAssigned"
 #     identity_ids = [data.azurerm_user_assigned_identity.existing.principal_id]
+#     FIXME: may also be
+#     identity_ids = [data.azurerm_user_assigned_identity.existing.identity[0].principal_id]
 #   }
 
 #   tags = {
