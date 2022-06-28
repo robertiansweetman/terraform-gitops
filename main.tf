@@ -2,10 +2,26 @@ data "azurerm_resource_group" "existing" {
   name      = "rg-customer"
 }
 
-data "azurerm_user_assigned_identity" "existing" {
-    name                = "umagithub"
-    resource_group_name = data.azurerm_resource_group.existing.name
+output "id" {
+    value = data.azurerm_resource_group.existing.id
 }
+
+# data "azurerm_user_assigned_identity" "existing" {
+#     name                = "umagithub"
+#     resource_group_name = data.azurerm_resource_group.existing.name
+# }
+
+# data azurerm_client_config current {}
+
+
+# output current_client_config {
+#     value = data.azurerm_client_config.current
+# }
+
+# resource "azurerm_resource_group" "new" {
+#   name     = "rg-new"
+#   location = "UK South"
+# }
 
 # resource "azurerm_storage_account" "bob" {
 #   name                     = "bob54387439749589348"

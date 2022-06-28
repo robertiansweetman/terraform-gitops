@@ -64,6 +64,7 @@ FIXME:  https://github.com/marketplace/actions/azure-cli-action
 
 == Documentation
 
+TODO: re-write this with references to documentation
 
 NOTE: these resources should NOT be created manually but by a pre-existing service principal that is able to create managed identities using az cli commands.
 1. Manually creating a User Managed Service Identity
