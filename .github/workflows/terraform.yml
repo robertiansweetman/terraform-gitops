@@ -45,7 +45,7 @@ jobs:
         id: plan
         env:
             TF_LOG: "DEBUG"
-        run: terraform plan -input=false
+        run: terraform plan
 
       - name: Terraform apply
         id: apply
