@@ -24,6 +24,8 @@ jobs:
       - name: Terraform Init
         id: init
         env:
+          TF_LOG: "DEBUG"
+          TF_IN_AUTOMATION: true
           ARM_USE_MSI: ${{ secrets.ARM_USE_MSI }} # tells terraform to use managed identity = true
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }} # must be the client id of the identity to use a user assigned identity
           # ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
@@ -44,7 +46,7 @@ jobs:
         id: plan
         env:
             TF_LOG: "DEBUG"
-        run: terraform plan
+        run: terraform plan -input=false
 
       - name: Terraform apply
         id: apply
