@@ -11,6 +11,7 @@ terraform {
     #   source  = "hashicorp/azuread"
     # }
   }
+  backend "azurerm" {}
 }
 
 provider "azurerm" {
